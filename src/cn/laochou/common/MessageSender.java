@@ -19,6 +19,7 @@ public class MessageSender {
         if(legal) {
             // 由消息发送者，根据我们的身份信息，选择发送
             MessageSender.judge(receiveMessage, socket, oneself);
+            return;
         }
         // 给身份违法的客户端发送数据
         MessageSender.sendMessageToIllegalClient(socket, IdentityEnums.SERVER);
