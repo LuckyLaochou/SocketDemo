@@ -44,9 +44,8 @@ public class Server {
                 System.exit(0);
             }
             Logger.info("服务器开始等待接收数据");
-            Socket finalSocket = socket;
             String message = MessageReceiver.receive(socket);
-            MessageSender.send(finalSocket, message, IdentityEnums.SERVER);
+            MessageSender.send(socket, message, IdentityEnums.SERVER);
         }
     }
 
